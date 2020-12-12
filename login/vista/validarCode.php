@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 }
 $resultado = array("estado"=>"false");
-//print_r($resultado);
+//print_r($resultado);***
 //die("aqui");
 return print(json_encode($resultado));
 
