@@ -1,4 +1,5 @@
 <?php 
+
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
 include_once "$root/Optica/Controlador/UsuarioControlador.php";
