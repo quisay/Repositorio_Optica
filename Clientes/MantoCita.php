@@ -54,8 +54,13 @@ if($transaccion=="C"){
 							<div class="form-group row">
 								<div class="col">
 									<label for="Cita_ID">Numero de Cita</label>
-									<input type="text" maxlength="20" name="txtCita_ID" class="form-control" id="txtCita_ID" autofocus="" 
-									placeholder="Numero de Cita" value="<?php echo $Cita_ID; ?>">
+									<input type="text" maxlength="10" name="txtCita_ID" class="form-control" id="txtCita_ID" autofocus="" 
+									placeholder="Numero de Cita" readonly value="<?php echo $Cita_ID; ?>">
+								</div>					
+								<div class="col">
+									<label for="Cliente_ID">Cliente</label>
+									<input type="text" maxlength="10" name="txtCliente_ID" class="form-control" id="txtCliente_ID" autofocus="" 
+									placeholder="Cliente_ID" value="<?php echo $Cliente_ID;?>">  
 								</div>								
 								<div class="col">
 									<label for="Fecha">Fecha</label>
@@ -70,36 +75,33 @@ if($transaccion=="C"){
 							</div>
 							
 							<div class="form-group row">
+								
 								<div class="col">
-									<label for="Cliente_ID">Numero de Cliente</label>
-									<input type="text" maxlength="10" name="txtCliente_ID" class="form-control" id="txtCliente_ID" autofocus="" 
-									placeholder="Cliente_ID" value="<?php echo $Cliente_ID;?>">  
-								</div>
-								<div class="col">
-									<label for="Medico_ID">Numero de Medico</label>
+									<label for="Medico_ID"> Medico</label>
 									<input type="text" maxlength="10" name="txtMedico_ID" class="form-control" id="txtMedico_ID" autofocus="" 
 									placeholder="Medico_ID" value="<?php echo $Medico_ID;?>">  
-								</div>
-								<div class="col">
-									<label for="FechaMod">Fecha de Modificacion</label>							
-									<input type="text" maxlength="20" name="txtFechaMod" class="form-control" id="txtFechaMod" autofocus="" 
-									placeholder="FechaMod" readonly value="<?php echo $FechaMod;?>">
 								</div>
 								<div class="col">
 									<label for="FechaIngreso">Fecha de Ingreso</label>
 									<input type="datetime-local" maxlength="20" name="txtFechaIngreso" class="form-control" id="txtFechaIngreso" autofocus="" 
 									placeholder="FechaIngreso" value="<?php echo $FechaIngreso;?>">
 								</div>
-							
-							</div>
-							
-							
-							<div class="form-group row">
 								<div class="col">
 									<label for="FechaSalida">Fecha de Salida</label>
 									<input type="datetime-local" maxlength="20" name="txtFechaSalida" class="form-control" id="txtFechaSalida" autofocus="" 
 									placeholder="FechaSalida" value="<?php echo $FechaSalida;?>">
 								</div>
+								<div class="col">
+									<label for="FechaMod">Fecha de Modificacion</label>							
+									<input type="text" maxlength="20" name="txtFechaMod" class="form-control" id="txtFechaMod" autofocus="" 
+									placeholder="FechaMod" readonly value="<?php echo $FechaMod;?>">
+								</div>
+							
+							</div>
+							
+							
+							<div class="form-group row">
+								
 								<div class="col">
 									<label for="Status">Status</label>
 									<input type="text" name="txtStatus" class="form-control" id="txtStatus"  autofocus="" 
@@ -114,8 +116,15 @@ if($transaccion=="C"){
 							</div>
 
 							<div class="form-group">
-							<button type="submit" class="btn btn-success">Guardar</button>
-							</div>
+							   <div class="col">
+									<label> </label>
+							   </div>
+							   <div class="col">
+							      <button type="submit" class="btn btn-success">Guardar</button>
+							   </div>
+							   <div class="col">
+							   </div>
+							</div
 						</form>
 					</div>
 				</div>

@@ -9,8 +9,17 @@ class CitaControlador{
 		$ocita->setCita_ID($Cita_ID);
 		return clsCita::getCita($ocita);
 	}
-	public function getAllCita(){
-		return clsCita::getAllCita();
+	public function getAllCita($extra=""){
+		return clsCita::getAllCita($extra);
+	}
+	public function getUltimaCita($Cliente_ID){
+		return clsCita::getUltimaCita($Cliente_ID);
+	}
+	public function getProximaCita($Cliente_ID){
+		return clsCita::getProximaCita($Cliente_ID);
+	}
+	public function getProximaFichaCita($Cliente_ID){
+		return clsCita::getProximaFichaCita($Cliente_ID);
 	}
 	public function registrarCita($Cita_ID, $Fecha, $Hora, $Cliente_ID, $Medico_ID, $FechaMod, $FechaIngreso, $FechaSalida, $Status, $Observaciones){
 		$ocita = new Cita();

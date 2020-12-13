@@ -49,9 +49,9 @@
                return $cita;
 
             }
-			public static function getAllCita(){
-               $query = "Select * from TBCita ";
-			  
+			public static function getAllCita($extra=""){
+				
+               $query = "Select * from TBCita  ".$extra;
                self::getConexion();
                $resultado = self::$conexion->prepare($query); 
                
@@ -89,23 +89,38 @@
             }
 
             public static function registrarCita($cita){
-               $query = "Insert Into TBCita(Cita_ID, Fecha, Hora, Cliente_ID, Medico_ID, FechaMod, FechaIngreso, FechaSalida, Status, Observaciones) VALUES 
-                         (:Cita_ID,:Fecha,:Hora,:Cliente_ID,:Medico_ID,:FechaMod,:FechaIngreso,:FechaSalida,:Status,:Observaciones)";
+              
                          //echo " qry ==".$query;
                self::getConexion();
+			   
+			   //Obtenemos folio del Dia
+			   $Fecha = $cita->GetFecha();
+			   $query = "Select max(cita_ID) as cita from TBCita Where status = 0 and fecha = :fech ";
+			   
+               $resultado0 = self::$conexion->prepare($query);
+			   $resultado0->bindParam(':fech',$Fecha);
+               $resultado0->execute();
+               $filas0 = $resultado0->fetch();
+               $cita_ID = $filas0["cita"];
+			   if(trim($cita_ID)=="") $cita_ID = 1;
+			   $cita_ID = $cita_ID +1;
+			   
+			   $query = "Insert Into TBCita(Cita_ID, Fecha, Hora, Cliente_ID, Medico_ID, FechaMod, FechaIngreso, FechaSalida, Status, Observaciones) VALUES 
+                         (:Cita_ID,:Fecha,:Hora,:Cliente_ID,:Medico_ID,:FechaMod,:FechaIngreso,:FechaSalida,:Status,:Observaciones)";
                $resultado = self::$conexion->prepare($query);
-               $Cita_ID = $cita->GetCita_ID();
+               $Cita_ID = $cita_ID;
                $Fecha = $cita->GetFecha();
                $Hora = $cita->GetHora();
                $Cliente_ID = $cita->GetCliente_ID();
                $Medico_ID = $cita->GetMedico_ID();
-			   $FechaMod = $cita->GetFechaMod();
+			   $FechaMod = date('Y-m-d H:i:s');
 			   $FechaIngreso = $cita->GetFechaIngreso();
 			   $FechaSalida = $cita->GetFechaSalida();
 			   $Status = $cita->GetStatus();
 			   $Observaciones = $cita->GetObservaciones();
                $status=0;
                $fechareg = date('Y-m-d h:i:s');
+			  
                $resultado->bindParam(':Cita_ID',$Cita_ID);
                $resultado->bindParam(':Fecha',$Fecha);
                $resultado->bindParam(':Hora',$Hora);

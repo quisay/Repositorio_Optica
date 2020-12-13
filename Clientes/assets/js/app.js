@@ -169,7 +169,7 @@ $(document).ready(function(){
 
 		return false;
 	});
-	$("#frmAcitaA").bind("submit",function(){
+	$("#frmAcita").bind("submit",function(){
  		$.ajax({
  			type:$(this).attr("method"),
  			url:$(this).attr("action"),
@@ -184,7 +184,7 @@ $(document).ready(function(){
  					type: "success",
  					message:"Se guardo la informacion correctamente!, te estamos redirigiendo...",
  					callback:function(){
- 						window.location.href="../Clientes/Cita.php";
+ 						window.location.href="../Clientes/ConsultaCitas.php";
  					}
  				   });
  				}else{
