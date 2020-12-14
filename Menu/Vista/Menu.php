@@ -33,7 +33,7 @@
 								</button>
 								<div class="dropdown-menu">
 									<a class="dropdown-item" href="../../Clientes/ConsultaCita.php">Consulta de Citas</a>
-									<a class="dropdown-item" href="../../Clientes/MantoCitas.php">Crear Cita</a>
+									<a class="dropdown-item" href="../../Clientes/MantoCita.php">Crear Cita</a>
 								</div>
 							</div>
 						</form>

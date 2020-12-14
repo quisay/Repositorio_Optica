@@ -9,7 +9,7 @@ $resultado = array();
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
     if (isset($_REQUEST["txtCita_ID"])){
-	echo "pasa2";
+	
         $txtCita_ID = validar_campo($_REQUEST["txtCita_ID"]);
         $txtFecha = validar_campo($_REQUEST["txtFecha"]);
         $txtHora = validar_campo($_REQUEST["txtHora"]);

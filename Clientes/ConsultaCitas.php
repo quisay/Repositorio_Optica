@@ -6,7 +6,8 @@ include "$root/Optica/Controlador/CitaControlador.php";
 include "$root/Optica/login/helps/helps.php";
 
 $resultado = array("estado"=>"true");
-$arr_cita = CitaControlador::getAllCita();
+$extra = " Order by Fecha, Cita_ID ";
+$arr_cita = CitaControlador::getAllCita($extra);
 
 
 $arr_Cita_ID = $arr_cita["arr_Cita_ID"];
@@ -20,7 +21,6 @@ $arr_FechaSalida = $arr_cita["arr_FechaSalida"];
 $arr_Status = $arr_cita["arr_Status"];
 $arr_Observaciones = $arr_cita["arr_Observaciones"];
 
-print_r($arr_Fecha);
 ?>
 
 <div class="container">
