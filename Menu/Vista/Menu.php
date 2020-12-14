@@ -20,6 +20,7 @@
 								<div class="dropdown-menu">
 									<a class="dropdown-item" href="../../Clientes/ConsultaCliente.php">Consulta de Clientes</a>
 									<a class="dropdown-item" href="../../Clientes/MantoCliente.php">Agregar Clientes</a>
+									<a class="dropdown-item" href="../../Clientes/MantoMedico.php">Agregar Medicos</a>
 									<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="../../Clientes/ConsultaUsuario.php">Consulta de Usuarios</a>
 									
