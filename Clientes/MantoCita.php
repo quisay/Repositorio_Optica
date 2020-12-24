@@ -25,11 +25,13 @@ $arr_Catalogo_ID_Sexo = $Config_sexo['arr_Catalogo_ID'];
 */
 if($transaccion=="C"){
    $Cita_ID = $_REQUEST['Cita_ID'];
+   $Fecha = $_REQUEST['Fecha'];
    $resultado = array("estado"=>"true");
-   $cita = CitaControlador::getCita($Cita_ID);
+   $cita = CitaControlador::getCita($Cita_ID, $Fecha);
    $Cita_ID = $cita->getCita_ID();  
    $Fecha = $cita->getFecha();
-   $Hora = $cita->getHora();
+   $Hora = str_pad($cita->getHora(),4,"0",STR_PAD_LEFT);
+   $Hora = substr($Hora,0,2) . ":".substr($Hora,2,2);
    $Cliente_ID = $cita->getCliente_ID();
    $Medico_ID = $cita->getMedico_ID();
    $FechaMod = $cita->getFechaMod();
@@ -37,6 +39,9 @@ if($transaccion=="C"){
    $FechaSalida = $cita->getFechaSalida();
    $Status = $cita->getStatus();
    $Observaciones = $cita->getObservaciones();
+   $FechaIngreso = str_replace(" ","T",$FechaIngreso);
+   $FechaSalida = str_replace(" ","T",$FechaSalida);
+   $FechaMod = str_replace(" ","T",$FechaMod);
    
 }
 ?>
@@ -115,16 +120,12 @@ if($transaccion=="C"){
 					
 							</div>
 
-							<div class="form-group">
-							   <div class="col">
-									<label> </label>
-							   </div>
-							   <div class="col">
+							<center>
+							   <div class="form-group">
 							      <button type="submit" class="btn btn-success">Guardar</button>
 							   </div>
-							   <div class="col">
-							   </div>
-							</div
+							</center>
+							   
 						</form>
 					</div>
 				</div>

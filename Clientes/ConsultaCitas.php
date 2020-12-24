@@ -47,22 +47,31 @@ $arr_Observaciones = $arr_cita["arr_Observaciones"];
 								</tr>
 								<?php
 								$c = 0;
-								foreach($arr_Cita_ID as $ncita){
-								?>
-								<tr>
-								   <td><center><a href="MantoCita.php?transaccion=C&Cita_ID=<?php echo $ncita;?>">  <?php echo $ncita;?></a> </center></td>
-								   <td>  <?php echo $arr_Fecha[$c];?> </td>
-								   <td>  <?php echo $arr_Hora[$c];?></td>
-								   <td><center><a href="MantoCliente.php?Cliente_ID=<?php echo $arr_Cliente_ID[$c];?>"><?php echo $arr_Cliente_ID[$c];?></a> </center></td>
-								   <td>  <?php echo $arr_Medico_ID[$c];?> </td>
-								   <td>  <?php echo $arr_FechaMod[$c];?> </td>
-								   <td>  <?php echo $arr_FechaIngreso[$c];?> </td>
-								   <td>  <?php echo $arr_FechaSalida[$c];?> </td>
-								   <td>  <?php echo $arr_Status[$c];?> </td>
-								   <td>  <?php echo $arr_Observaciones[$c];?> </td>
-								</tr>
-								<?php 
-								    ++$c;
+								if(isset($arr_Cita_ID)){
+									foreach($arr_Cita_ID as $ncita){
+									?>
+									<tr>
+									<td><center><a href="MantoCita.php?transaccion=C&Cita_ID=<?php echo $ncita;?>&Fecha=<?php echo $arr_Fecha[$c];?>">  <?php echo $ncita;?></a> </center></td>
+									<td>  <?php echo $arr_Fecha[$c];?> </td>
+									<td>  <?php
+											$arr_Hora[$c] = str_pad($arr_Hora[$c],4,"0",STR_PAD_LEFT);
+											$arr_Hora[$c] = substr($arr_Hora[$c],0,2) . ":".substr($arr_Hora[$c],2,2);								   
+											echo $arr_Hora[$c];
+											?>
+									</td>
+									<td><center><a href="MantoCliente.php?transaccion=C&Cliente_ID=<?php echo $arr_Cliente_ID[$c];?>"><?php echo $arr_Cliente_ID[$c];?></a> </center></td>
+									<td>  <?php echo $arr_Medico_ID[$c];?> </td>
+									<td>  <?php echo $arr_FechaMod[$c];?> </td>
+									<td>  <?php echo $arr_FechaIngreso[$c];?> </td>
+									<td>  <?php echo $arr_FechaSalida[$c];?> </td>
+									<td>  <?php echo $arr_Status[$c];?> </td>
+									<td>  <?php echo $arr_Observaciones[$c];?> </td>
+									</tr>
+									<?php 
+										++$c;
+									}
+								}else{
+									echo "<legend><center>No existen Datos</center></legend>";
 								}
 								?>
 							</table>

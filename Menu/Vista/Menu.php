@@ -14,25 +14,36 @@
 							<br>
 							<div class="col-md-4 col-md-offset-4">
 								<div class="btn-group">
-								<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Clientes/Usuarios
-								</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="../../Clientes/ConsultaCliente.php">Consulta de Clientes</a>
-									<a class="dropdown-item" href="../../Clientes/MantoCliente.php">Agregar Clientes</a>
-									<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="../../Clientes/ConsultaUsuario.php">Consulta de Usuarios</a>
+									<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Clientes/Usuarios
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="../../Clientes/ConsultaCliente.php">Consulta de Clientes</a>
+										<a class="dropdown-item" href="../../Clientes/MantoCliente.php">Agregar Clientes</a>
+										<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="../../Clientes/ConsultaUsuario.php">Consulta de Usuarios</a>
 									
 									</div>
 								</div>
 								<br> <br>
 								<div class="btn-group">
-								<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Citas
-								</button>
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="../../Clientes/ConsultaCita.php">Consulta de Citas</a>
-									<a class="dropdown-item" href="../../Clientes/MantoCita.php">Crear Cita</a>
+									<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Citas
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="../../Clientes/ConsultaCitas.php">Consulta de Citas</a>
+										<a class="dropdown-item" href="../../Clientes/MantoCita.php">Crear Cita</a>
+									</div>
+								</div>
+								<br> <br>
+								<div class="btn-group">
+									<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Horario
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="../../rh/ConsultaFechaHorarios.php">Consulta Fecha de Horarios</a>
+										<a class="dropdown-item" href="../../rh/MantoFecha.php">Crear Fecha de Horarios</a>
+									</div>
 								</div>
 							</div>
 						</form>
