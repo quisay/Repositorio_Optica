@@ -15,9 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
        
         $resultado = array("estado"=>"true");
 		//$Medico_ID = $_REQUEST["Medico_ID"];
-        //$Fecha = $_REQUEST["Fecha"];
+        $Fecha = $_REQUEST["fecha"];
 		$Medico_ID = 1;
-        $Fecha = "01-01-2021";
+        //$Fecha = "01-01-2021";
 		
 		ProgHorarioControlador::deleteProgHorario($Medico_ID, $Fecha);
 		//Recorremos todos los elementos del html de Hora1 que fueron selecionados

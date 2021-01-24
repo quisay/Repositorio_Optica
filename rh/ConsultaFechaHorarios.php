@@ -18,6 +18,8 @@ $arr_Medico_ID = $arr_horario["arr_Medico_ID"];
 $arr_FechaMod = $arr_horario["arr_FechaMod"];
 $arr_Usuario = $arr_horario["arr_Usuario"];
 
+print_r($arr_Descripcion);
+
 ?>
 
 <div class="container">

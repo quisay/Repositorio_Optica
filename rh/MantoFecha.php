@@ -105,12 +105,13 @@ if($transaccion=="C"){
 									<th><?php echo $Dia; ?></th>
 									<td>
 										<label for="fecha"></label>							
-										<input type="date" maxlength="10" name="txtFecha<?php echo $c_dia; ?>" class="form-control" id="txtFecha" autofocus="" 
+										<input type="date" maxlength="10" name="txtFecha<?php echo $c_dia; ?>" class="form-control" id="Fecha<?php echo $c_dia; ?>" autofocus="" 
 										placeholder="Fecha" value="<?php echo $Fecha;?>">
 									
 									</td>
 									<td style="text-align: center; vertical-align: middle;">
-										<button type="button" class="btn btn-success"  data-toggle="modal" data-target="#ModalHorario">+</button>
+										<!--<button type="button" class="btn btn-success edit"  data-toggle="modal" data-target="#ModalHorario">+</button>-->
+										<button type="button" class="btn btn-success edit" onclick="muestramodal(<?php echo $c_dia; ?>);" >+</button>
 			
 									</td>	
 									<td style="text-align: center; vertical-align: middle;">
@@ -152,12 +153,15 @@ if($transaccion=="C"){
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-
+	  
       </div>
       <div class="modal-body" id="body-m">
 	  	<div class="form-group row">
 			<div class="col">
 		      <button type="button" class="btn btn-success" onclick="agregacontrol('body-m');">Agregar nuevo +</button>
+			</div>
+			<div class="col">
+		      Fecha:<input type="text" id="fecha" name="fecha" maxlength="12" readonly>
 			</div>
 		</div>
 		<div class="form-group row" >
