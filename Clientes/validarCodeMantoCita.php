@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
         $txtCita_ID = validar_campo($_REQUEST["txtCita_ID"]);
         $txtFecha = validar_campo($_REQUEST["txtFecha"]);
-        $txtHora = validar_campo($_REQUEST["txtHora"]);
+        $txtHora = str_replace(":","",validar_campo($_REQUEST["txtHora"]));
         $txtCliente_ID = validar_campo($_REQUEST["txtCliente_ID"]);
         $txtMedico_ID = validar_campo($_REQUEST["txtMedico_ID"]);
         $txtFechaMod = validar_campo($_REQUEST["txtFechaMod"]);

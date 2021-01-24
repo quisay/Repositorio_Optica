@@ -22,14 +22,16 @@
             public static function getCita($cita){
                $filtro="";
                $b_buscar = 0;//Buscar todos
-               $filtro = " Where cita_ID = :cita_id";
+               $filtro = " Where cita_ID = :cita_id and Fecha = :fecha";
                
                $query = "Select * from TBCita ".$filtro;
 			   
                self::getConexion();
                $resultado = self::$conexion->prepare($query);
                $cita_id = $cita->GetCita_ID();
+			   $Fecha = $cita->GetFecha();
                $resultado->bindParam(':cita_id',$cita_id);   
+			   $resultado->bindParam(':fecha',$Fecha);   
                
                $resultado->execute();
 
@@ -50,6 +52,16 @@
 
             }
 			public static function getAllCita($extra=""){
+				$arr_Cita_ID=null;
+				$arr_Fecha=null;
+				$arr_Hora=null;
+				$arr_Cliente_ID=null;
+                $arr_Medico_ID=null;
+				$arr_FechaMod=null;
+				$arr_FechaIngreso=null;
+				$arr_FechaSalida=null;
+				$arr_Status=null;
+				$arr_Observaciones=null;
 				
                $query = "Select * from TBCita  ".$extra;
                self::getConexion();
@@ -102,7 +114,7 @@
                $resultado0->execute();
                $filas0 = $resultado0->fetch();
                $cita_ID = $filas0["cita"];
-			   if(trim($cita_ID)=="") $cita_ID = 1;
+			   if(trim($cita_ID)=="") $cita_ID = 0;
 			   $cita_ID = $cita_ID +1;
 			   
 			   $query = "Insert Into TBCita(Cita_ID, Fecha, Hora, Cliente_ID, Medico_ID, FechaMod, FechaIngreso, FechaSalida, Status, Observaciones) VALUES 

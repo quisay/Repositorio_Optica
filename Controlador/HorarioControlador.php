@@ -21,14 +21,15 @@ class HorarioControlador{
 	public function getProximaFichaHorario($Horario_ID){
 		return clsHorario::getProximaFichaHorario($Horario_ID);
 	}
-	public function registrarHorario($Horario_ID, $Fecha, $Hora, $Descripcion, $Semana, $FechaMod){
+	public function registrarHorario($Horario_ID, $Descripcion, $Dia, $Hora, $Medico_ID, $FechaMod, $Usuario){
 		$ohorario = new Horario();
 		$ohorario->setHorario_ID($Horario_ID);
-		$ohorario->setFecha($Fecha);
-		$ohorario->setHora($Hora);
 		$ohorario->setDescripcion($Descripcion);
-		$ohorario->setSemana($Semana);
+		$ohorario->setDia($Dia);
+		$ohorario->setHora($Hora);
+		$ohorario->setMedico_ID($Medico_ID);
 		$ohorario->setFechaMod($FechaMod);
+		$ohorario->setUsuario($Usuario);
 		return clsHorario::registrarHorario($ohorario);
 	}
 

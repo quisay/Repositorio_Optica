@@ -4,9 +4,10 @@ $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 include_once "$root/Optica/datos/clsCita.php";
 class CitaControlador{
 
-	public function getCita($Cita_ID){
+	public function getCita($Cita_ID, $Fecha){
 		$ocita = new Cita();
 		$ocita->setCita_ID($Cita_ID);
+		$ocita->setFecha($Fecha);
 		return clsCita::getCita($ocita);
 	}
 	public function getAllCita($extra=""){
