@@ -69,7 +69,7 @@
 
             }
 
-            public static function registrarProgHorario($ProgHorario){
+            public static function registrarProgHorario($proghorario){
                $query = "Insert Into TBProgHorario(Medico_ID, Fecha, Hora) VALUES 
                          (:Medico_ID,:Fecha,:Hora)";
                          //echo " qry ==".$query;
@@ -83,18 +83,28 @@
                $resultado->bindParam(':Medico_ID',$Medico_ID);
                $resultado->bindParam(':Fecha',$Fecha);
                $resultado->bindParam(':Hora',$Hora);
+			   //echo " Medico_ID ".$Medico_ID." Fecha ".$Fecha." Hora ".$Hora;
 			   
-               $Medico_ID = NULL;
-			   //echo " Medico_ID ".$Fecha." Hora ";
                if($resultado->execute()){
-                  $query = "Select max(horario_ID) as horario from TBProgHorario Where status = 0 ";
-                  $resultado1 = self::$conexion->prepare($query);
-                  $resultado1->execute();
-                  $filas1 = $resultado1->fetch();
-                  $Medico_ID = $filas1["proghorario"];
+                  return true;
                }
-               if($Medico_ID=="")die("Error al insertar los datos, llame al administrador del sistema");
-               return $Medico_ID;
+               return false;
+            }
+			public static function deleteProgHorario($Medico_ID, $Fecha){
+               $filtro="";
+               $b_buscar = 0;//Buscar todos
+               $filtro = " Where Medico_ID = :Medico_ID and Fecha = :Fecha";
+               
+               $query = "Delete from TBProgHorario ".$filtro;		   
+               self::getConexion();
+               $resultado = self::$conexion->prepare($query);
+               $resultado->bindParam(':Medico_ID',$Medico_ID); 
+			   $resultado->bindParam(':Fecha',$Fecha);  			   
+               
+               $resultado->execute();
+
+               return true;
+
             }
    }
 

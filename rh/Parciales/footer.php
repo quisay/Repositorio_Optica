@@ -13,6 +13,7 @@
   <script type="text/javascript" src="assets/js/overhang.min.js"></script>
   <script src="assets/js/app.js"></script>
   <script src="js_casa/casa_clientes.js"></script>
+  <script src="js_casa/horario.js"></script>
 
 </body>
 

@@ -110,9 +110,8 @@ if($transaccion=="C"){
 									
 									</td>
 									<td style="text-align: center; vertical-align: middle;">
-										<button type="button" class="btn btn-success" onclick = "agregar(<?php echo $c_dia; ?>);" >+</button>
-										 
-										
+										<button type="button" class="btn btn-success"  data-toggle="modal" data-target="#ModalHorario">+</button>
+			
 									</td>	
 									<td style="text-align: center; vertical-align: middle;">
 										<label><input type="checkbox" id="cbox<?php echo $c_dia; ?>" name="cbox<?php echo $c_dia; ?>" value=""></label><br>
@@ -127,6 +126,7 @@ if($transaccion=="C"){
 							<center>
 							   <div class="form-group">
 							      <button type="submit" class="btn btn-success">Guardar</button>
+								 
 							   </div>
 							</center>
 							   
@@ -137,5 +137,51 @@ if($transaccion=="C"){
 		</div>
 	</div>
 </div>
+
+
+
+
+
+<!-- Modal para programar Horario-->
+<form id="frmAhorario" action="validarCodeProgHora.php" method="POST" role="form">
+<div class="modal fade" id="ModalHorario" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Captura de Horario Disponible</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+      </div>
+      <div class="modal-body" id="body-m">
+	  	<div class="form-group row">
+			<div class="col">
+		      <button type="button" class="btn btn-success" onclick="agregacontrol('body-m');">Agregar nuevo +</button>
+			</div>
+		</div>
+		<div class="form-group row" >
+			<div class="col">
+		      Horario 1:
+			</div>
+			<div class="col">
+		      <input type="time" id="hora1" name="hora1">
+			</div>
+			<div class="col">
+			</div>
+		</div>
+		
+         
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-success">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+<input type="hidden" id="cuentahorasmodal" name="cuentahorasmodal" value="1">
+</form>
+	
 	
 	 <?php include "Parciales/footer.php";?>

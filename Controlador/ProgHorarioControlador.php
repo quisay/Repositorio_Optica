@@ -30,7 +30,10 @@ class ProgHorarioControlador{
 	}
 
 	public function registraProgHorario($oproghorario){
-	   return clsProgHorarioControlador::registrarProgHorario($oproghorario);
+	   return clsProgHorario::registrarProgHorario($oproghorario);
+	}
+	public function deleteProgHorario($Medico_ID, $Fecha){
+		return clsProgHorario::deleteProgHorario($Medico_ID, $Fecha);
 	}
 }
 ?>
