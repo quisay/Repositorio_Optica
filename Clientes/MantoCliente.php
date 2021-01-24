@@ -109,12 +109,12 @@ if($transaccion=="C"){
 								<div class="col">
 									<label for="nombre">Nombre</label>
 									<input type="text" maxlength="20" name="txtNombre" class="form-control" id="txtNombre" autofocus="" 
-									placeholder="Nombre" value="<?php echo $Nombre; ?>">
+									placeholder="Nombre" value="<?php echo $Nombre; ?>" required>
 								</div>								
 								<div class="col">
 									<label for="apellido paterno">Apellido Paterno</label>
 									<input type="text" maxlength="20" name="txtApaterno" class="form-control" id="txtApaterno" autofocus="" 
-									placeholder="Apellido Paterno" value="<?php echo $Apaterno; ?>">
+									placeholder="Apellido Paterno" value="<?php echo $Apaterno; ?>" required>
 								</div>												
 								<div class="col">
 									<label for="apellido materno">Apellido Materno</label>

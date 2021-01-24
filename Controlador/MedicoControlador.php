@@ -15,5 +15,13 @@ class 	MedicoControlador{
 	public function registraMedico($omedico){
 		return clsMedicos::registraMedico($omedico);
 	}
+	
+	
+	public function eliminaMedico($omedico){
+		return clsMedicos::eliminaMedico($omedico);
+	}
+	public function eliminaAllMedico(){
+		return clsMedicos::eliminaAllMedico();
+	}
 }
 ?>

@@ -2,7 +2,7 @@
 <?php include "Parciales/menu.php";?>
   <header class="masthead text-center text-white">
     
-	<!-- 
+	
 	<div class="masthead-content">
       <div class="container">
 	  <h1 class="masthead-heading mb-0">OPTOLITE</h1>
@@ -11,12 +11,13 @@
         <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Learn More</a>
       </div>
     </div>
+	 
     <div class="bg-circle-1 bg-circle"></div>
     <div class="bg-circle-2 bg-circle"></div>
     <div class="bg-circle-3 bg-circle"></div>
     <div class="bg-circle-4 bg-circle"></div>
 	
-	 -->
+	
 	
 	
 	<main class="container">
@@ -30,9 +31,9 @@
 						<li data-target="#slideshow" data-slide-to="2"></li>
 					</ol>
 					<!-- Slides -->
-					<div class="carousel-inner">
+					<div class="carousel-inner">				
 						<div class="carousel-item active">
-							<img src="img/1.jpg" class="d-block w-100" alt="">
+							<img src="img/portada.jpeg" class="d-block w-100" alt="">
 						</div>
 						<div class="carousel-item">
 							<img src="img/2.jpg" class="d-block w-100" alt="">
@@ -43,11 +44,11 @@
 					</div>
 					
 					<!-- Controles -->
-					<a href="#slideshow" class="carousel-control-prev" data-slide="prev">
+					<a href="#slideshow" class="carousel-control-prev" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 						<span class="sr-only">Anterior</span>
 					</a>
-					<a href="#slideshow" class="carousel-control-next" data-slide="next">
+					<a href="#slideshow" class="carousel-control-next" role="button" data-slide="next">
 						<span class="carousel-control-next-icon" aria-hidden="true"></span>
 						<span class="sr-only">Siguiente</span>
 					</a>

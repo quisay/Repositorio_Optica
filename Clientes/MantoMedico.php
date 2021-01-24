@@ -34,7 +34,7 @@ if($transaccion=="C"){
 			<div class="col">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<form id="frmAmedico" action="validarCodeMedico.php" method="POST" role="form">
+						<form id="frmAmantomedico" action="validarCodeMantoMedico.php" method="POST" role="form">
 							<legend>Mantenimiento de Medicos</legend>
 							
 						<div class="col-4"></div>
@@ -52,12 +52,12 @@ if($transaccion=="C"){
 								<div class="col">
 									<label for="nombre">Nombre</label>
 									<input type="text" maxlength="20" name="txtNombre" class="form-control" id="txtNombre" autofocus="" 
-									placeholder="Nombre" value="<?php echo $Nombre; ?>">
+									placeholder="Nombre" value="<?php echo $Nombre; ?>" required>
 								</div>								
 								<div class="col">
 									<label for="apellido paterno">Apellido Paterno</label>
 									<input type="text" maxlength="20" name="txtApaterno" class="form-control" id="txtApaterno" autofocus="" 
-									placeholder="Apellido Paterno" value="<?php echo $Apaterno; ?>">
+									placeholder="Apellido Paterno" value="<?php echo $Apaterno; ?>" required>
 								</div>												
 								<div class="col">
 									<label for="apellido materno">Apellido Materno</label>
