@@ -5,8 +5,8 @@
       <p class="m-0 text-center text-white small">Contacto de Urgencias</p>
 	  <div class="float-left">
          <p class="m-0 text-left text-white small">Nephtali Melendez Chavez</p>
-	     <p class="m-0 text-left text-white small">55 5555 5555</p>
-	     <p class="m-0 text-left text-white small">correo</p>
+	     <p class="m-0 text-left text-white small">55 4946 2378</p>
+	     <p class="m-0 text-left text-white small">nep.mel.25@outlook.com</p>
 	  </div>
 	  <div class="float-right">
          <p class="m-0 text-right text-white small">Saul Melendez Chavez</p>

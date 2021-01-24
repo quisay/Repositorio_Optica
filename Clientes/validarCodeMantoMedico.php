@@ -8,7 +8,7 @@ $resultado = array();
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
-    if (isset($_REQUEST["txtNombre"])){
+    if (isset($_REQUEST["txtMedico_ID"])){
 	
         $txtMedico_ID = validar_campo($_REQUEST["txtMedico_ID"]);
         $txtNombre = validar_campo($_REQUEST["txtNombre"]);
@@ -16,20 +16,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $txtAmaterno = validar_campo($_REQUEST["txtAmaterno"]);
         $resultado = array("estado"=>"true");
         //Asignamos a la entidad medico
-        $medico = new Medico();
-        $medico->setMedico_ID($txtMedico_ID);
-		echo " medico ".$txtMedico_ID;
-        $medico->setNombre($txtNombre);
-        $medico->setApaterno($txtApaterno);
-        $medico->setAmaterno($txtAmaterno);
-
+        $omedico = new Medico();
+        $omedico->setMedico_ID($txtMedico_ID);
+		//echo " medico ".$txtMedico_ID;
+        $omedico->setNombre($txtNombre);
+        $omedico->setApaterno($txtApaterno);
+        $omedico->setAmaterno($txtAmaterno);
+		
 
 		$resultado = array("estado"=>"true");
-        if(MedicoControlador::registraMedico($medico)){
+		
+		if(MedicoControlador::registraMedico($omedico)){
 			return print(json_encode($resultado));
-            //return true;
-        }	
+		
+		//Antes de insertar eliminamos registros
+		//MedicoControlador::eliminaMedico($omedico);
+		//Insertamos registro
+        //MedicoControlador::registraMedico($omedico);
+		
+		}	
     }
+			
 }
 $resultado = array("estado"=>"false");
 return print(json_encode($resultado));

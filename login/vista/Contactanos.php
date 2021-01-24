@@ -15,7 +15,7 @@
     <div class="bg-circle-4 bg-circle"></div>
 
 	<div class="btn-whatsapp">
-		<a href="https://api.whatsapp.com/send?phone=525610402799" target="_blank">
+		<a href="https://api.whatsapp.com/send?phone=5610402799" target="_blank">
 		<img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt=""></a>
 	</div>
   </header>

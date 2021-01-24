@@ -2,7 +2,8 @@
     $root = realpath($_SERVER["DOCUMENT_ROOT"]);
    include_once 'Conexion.php';
    include_once "$root/Optica/entidades/Medico.php";
-      class clsMedicos extends Conexion
+      class clsMedicos
+	  extends Conexion
       {
 
       		protected static $conexion;
@@ -19,7 +20,7 @@
    *** Funcion que obtiene un Medico
    ***
    */
-            public static function getMedico($medico){
+            public static function getMedico($omedico){
                $filtro="";
                $b_buscar = 0;//Buscar todos
                $filtro = " Where medico_ID = :medico_id";
@@ -28,7 +29,7 @@
 			   
                self::getConexion();
                $resultado = self::$conexion->prepare($query);
-               $medico_id = $medico->GetMedico_ID();
+               $medico_id = $medico->getMedico_ID();
                $resultado->bindParam(':medico_id',$medico_id);   
                
                $resultado->execute();
@@ -69,7 +70,7 @@
             }
 
             public static function registraMedico($medico){
-
+			
  //Obtenemos folio del Dia
 			   self::getConexion();
 			   $query = "Select max(medico_ID) as medico from TBMedico";
@@ -86,10 +87,10 @@
                          //echo " qry ==".$query;
                
                $resultado = self::$conexion->prepare($query);
-               //$medico_ID = $medico->GetMedico_ID();
-			   $nombre = $medico->GetNombre();
-               $apaterno = $medico->GetApaterno();
-               $amaterno = $medico->GetAmaterno();
+               //$medico_ID = $medico->getMedico_ID();
+			   $nombre = $medico->getNombre();
+               $apaterno = $medico->getApaterno();
+               $amaterno = $medico->getAmaterno();
 			   $resultado->bindParam(':medico_ID',$medico_ID);
                $resultado->bindParam(':nombre',$nombre);
                $resultado->bindParam(':apaterno',$apaterno);
@@ -101,6 +102,43 @@
                if($medico_ID=="")die("Error al insertar los datos, llame al administrador del sistema");
                return $medico_ID;
             }
+			
+			
+			
+			public static function eliminaMedico($omedico){
+
+                $query = "DELETE from TBmedico where Medico_ID = :Medico_ID 
+				   									 and Nombre = :Nombre 
+						                             and Apaterno = :Apaterno 
+													 and Amaterno   = :Amaterno";
+                self::getConexion();
+                $resultado = self::$conexion->prepare($query);
+                $Medico_ID = $omedico->getMedico_ID();
+                $Nombre = $omedico->getNombre();
+			    $Apaterno = $omedico->getApaterno();
+			    $Amaterno = $omedico->getAmaterno();
+
+                $resultado->bindParam(':Medico_ID',$Medico_ID);
+                $resultado->bindParam(':Nombre',$Nombre);
+			    $resultado->bindParam(':Apaterno',$Apaterno);
+			    $resultado->bindParam(':Amaterno',$Amaterno);
+
+                if($resultado->execute()){
+                   return true;
+                }
+                return false;
+			}
+			public static function eliminaAllMedico(){
+
+                $query = "DELETE from TBmedico";
+                self::getConexion();
+                $resultado = self::$conexion->prepare($query);
+                if($resultado->execute()){
+                   return true;
+                }
+                return false;
+			}
+			
 
    }
 
